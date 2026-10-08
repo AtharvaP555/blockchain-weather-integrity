@@ -66,6 +66,7 @@ The system therefore provides a practical mechanism for detecting whether a regi
 ## 🏗️ System Architecture
 
 ```mermaid
+%%{init: {'theme':'base', 'themeVariables': {'primaryTextColor':'#111111', 'secondaryTextColor':'#111111', 'tertiaryTextColor':'#111111', 'lineColor':'#333333'}}}%%
 flowchart LR
 
     U[User] --> F[React + Vite Frontend]
@@ -83,13 +84,13 @@ flowchart LR
     B -->|Retrieve Record| DB
     B -->|Verify Hash| C
 
-    style U fill:#f5f5f5,stroke:#555
-    style F fill:#f5f5f5,stroke:#555
-    style B fill:#f5f5f5,stroke:#555
-    style DB fill:#f5f5f5,stroke:#555
-    style H fill:#f5f5f5,stroke:#555
-    style C fill:#f5f5f5,stroke:#555
-    style BC fill:#f5f5f5,stroke:#555
+    style U fill:#ffffff,stroke:#222222,color:#111111
+    style F fill:#ffffff,stroke:#222222,color:#111111
+    style B fill:#ffffff,stroke:#222222,color:#111111
+    style DB fill:#ffffff,stroke:#222222,color:#111111
+    style H fill:#ffffff,stroke:#222222,color:#111111
+    style C fill:#ffffff,stroke:#222222,color:#111111
+    style BC fill:#ffffff,stroke:#222222,color:#111111
 ```
 
 ### Architecture Components
@@ -196,6 +197,7 @@ When a user requests verification:
 5. Both hashes are compared.
 
 ```mermaid
+%%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffffff', 'primaryTextColor':'#111111', 'primaryBorderColor':'#222222', 'secondaryColor':'#ffffff', 'secondaryTextColor':'#111111', 'secondaryBorderColor':'#222222', 'tertiaryColor':'#ffffff', 'tertiaryTextColor':'#111111', 'tertiaryBorderColor':'#222222', 'nodeBkg':'#ffffff', 'mainBkg':'#ffffff', 'lineColor':'#333333', 'textColor':'#111111'}}}%%
 flowchart TD
 
     A[Retrieve Weather Record] --> B[Canonicalize Record]
@@ -206,8 +208,13 @@ flowchart TD
     E -->|Yes| F[✓ Record Verified]
     E -->|No| G[⚠ Record Tampered]
 
-    style F fill:#e8f5e9,stroke:#4caf50
-    style G fill:#ffebee,stroke:#f44336
+    style A fill:#ffffff,stroke:#222222,color:#111111
+    style B fill:#ffffff,stroke:#222222,color:#111111
+    style C fill:#ffffff,stroke:#222222,color:#111111
+    style D fill:#ffffff,stroke:#222222,color:#111111
+    style E fill:#ffffff,stroke:#222222,color:#111111
+    style F fill:#ffffff,stroke:#222222,color:#111111
+    style G fill:#ffffff,stroke:#222222,color:#111111
 ```
 
 ---
@@ -311,6 +318,7 @@ A deliberate separation is used between blockchain storage and conventional data
 This design avoids storing complete weather datasets directly on the blockchain while retaining an independently verifiable commitment to the registered record.
 
 ```mermaid
+%%{init: {'theme':'base', 'themeVariables': {'primaryTextColor':'#111111', 'secondaryTextColor':'#111111', 'tertiaryTextColor':'#111111', 'lineColor':'#333333'}}}%%
 flowchart LR
 
     R[Complete Weather Record]
@@ -324,9 +332,12 @@ flowchart LR
     M -. Verification .-> V[Hash Comparison]
     B -. Registered Hash .-> V
 
-    style M fill:#f5f5f5,stroke:#555
-    style B fill:#f5f5f5,stroke:#555
-    style V fill:#f5f5f5,stroke:#555
+    style R fill:#ffffff,stroke:#222222,color:#111111
+    style M fill:#ffffff,stroke:#222222,color:#111111
+    style H fill:#ffffff,stroke:#222222,color:#111111
+    style S fill:#ffffff,stroke:#222222,color:#111111
+    style B fill:#ffffff,stroke:#222222,color:#111111
+    style V fill:#ffffff,stroke:#222222,color:#111111
 ```
 
 ---
